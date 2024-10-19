@@ -1,0 +1,39 @@
+Instructions to Run the PHP Basic Calculator 
+
+Requirements
+- PHP must be installed on your system. You can download it from https://www.php.net/downloads.
+- A command line interface (CLI) is required to run the script.
+
+Steps to Run the Program
+1. Open Your CLI:
+   - On Windows, you can use Command Prompt (cmd) or PowerShell.
+   - On macOS or Linux, open the Terminal.
+
+2. Navigate to the Directory:
+   - Use the `cd` command to change to the directory where your `index.php` file is located. 
+   - For example, if your file is in `C:\my_php_programs`, type:
+     ```
+     cd C:\my_php_programs
+     ```
+   - On macOS or Linux, it would look something like:
+     ```
+     cd /path/to/my_php_programs
+     ```
+
+3. Run the PHP Script:
+   - Execute the script by typing the following command:
+     ```
+     php index.php
+     ```
+
+4. Follow the Prompts:
+   - The program will prompt you to enter the first number, choose an operator (+, -, *, /, %, **), and then enter the second number. Follow the on-screen instructions.
+
+5. **View the Result:
+   - After entering the inputs, the program will calculate and display the result.
+
+Notes
+- Ensure that you enter valid numbers and operators to avoid errors.
+- The program handles division by zero and provides appropriate error messages.
+
+Enjoy calculating!
