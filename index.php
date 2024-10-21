@@ -1,9 +1,8 @@
 <?php
 
 /*
-    APP: ADVANCED CALCULATOR USING PHP
+    APP: CALCULATOR USING PHP
     CREATED BY: IAN PURIFICACION
-    UPDATED: OCT 2024
 */
 
 // Function to get the USER's input for a valid number
@@ -15,18 +14,18 @@ function getNumberInput($prompt) {
         if (is_numeric($input)) {
             return (float)$input;
         } else {
-            echo "⚠️ Please enter a valid number.\n";
+            echo "⚠️Please enter a valid number.\n";
         }
     }
 }
 
 // Function to get USER's input for operator
 function getOperatorInput() {
-    echo "🔢 Choose an operator (+, -, *, /, %, **, sqrt, abs, log, exit): ";
+    echo "Choose an operator(+, -, *, /, %, **, sqrt, abs, log, exit): ";
     return trim(fgets(STDIN));
 }
 
-// Function to calculate basic mathematics and additional operations
+// Function to calculate basic math
 function calculate($num1, $num2, $operator) {
     switch ($operator) {
         case "+":
@@ -54,16 +53,15 @@ function calculate($num1, $num2, $operator) {
 
 // Function to handle multiple calculations
 function runCalculator() {
+    //Prompt the user
     while (true) {
-        // Get first number
-        $num1 = getNumberInput("📥 Enter the first number: ");
-        
-        // Get operator
+        $num1 = getNumberInput("Enter the first number: ");
+
         $operator = getOperatorInput();
         
         // Check if user wants to exit
         if (strtolower($operator) == "exit") {
-            echo "👋 Goodbye!\n";
+            echo "Goodbye!\n";
             break;
         }
         
@@ -72,7 +70,7 @@ function runCalculator() {
             $result = calculate($num1, null, $operator);
         } else {
             // Get second number for binary operations
-            $num2 = getNumberInput("📥 Enter the second number: ");
+            $num2 = getNumberInput("Enter the second number: ");
             $result = calculate($num1, $num2, $operator);
         }
 
@@ -81,17 +79,15 @@ function runCalculator() {
         echo "🎯 RESULT: $result\n";
         echo "==================================================\n";
 
-        // Ask if the user wants to perform another calculation
-        echo "\n🔄 Do you want to perform another calculation? (y/n): ";
+        // Prompt the user wants another calculation
+        echo "\nDo you want to perform another calculation? (y/n): ";
         $continue = trim(fgets(STDIN));
         if (strtolower($continue) !== "y") {
-            echo "👋 Goodbye!\n";
+            echo "Goodbye!\n";
             break;
         }
     }
 }
 
-// Run the calculator
 runCalculator();
-
 ?>
