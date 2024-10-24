@@ -5,7 +5,7 @@
     CREATED BY: IAN PURIFICACION
 */
 
-// Function to get the USER's input for a valid number
+// Function to get the user's input for valid number
 function getNumberInput($prompt) {
     while (true) {
         echo $prompt;
@@ -19,13 +19,13 @@ function getNumberInput($prompt) {
     }
 }
 
-// Function to get USER's input for operator
+// Function to get user's input for operator
 function getOperatorInput() {
-    echo "Choose an operator(+, -, *, /, %, **, sqrt, abs, log, exit): ";
+    echo "Choose an operator(+, -, *, /, %, **, sqrt, abs, log, sin, cos, tan, fact, exit): ";
     return trim(fgets(STDIN));
 }
 
-// Function to calculate basic math
+// Function for calculation
 function calculate($num1, $num2, $operator) {
     switch ($operator) {
         case "+":
@@ -41,35 +41,55 @@ function calculate($num1, $num2, $operator) {
         case "**":
             return $num1 ** $num2;
         case "sqrt":
-            return sqrt($num1);
+            return ($num1 < 0) ? "❌ ERROR! Square root of a negative number is undefined" : sqrt($num1);
         case "abs":
             return abs($num1);
         case "log":
             return ($num1 <= 0) ? "❌ ERROR! Logarithm for non-positive numbers is undefined" : log($num1);
+        case "sin":
+            return sin(deg2rad($num1));
+        case "cos":
+            return cos(deg2rad($num1));
+        case "tan":
+            return tan(deg2rad($num1));
+        case "fact":
+            return ($num1 < 0) ? "❌ ERROR! Factorial of a negative number is undefined" : factorial($num1);
         default:
             return "❌ Invalid operator! Please enter the correct one.";
     }
 }
 
+// Function for factorial calculation
+function factorial($num) {
+    if ($num == 0) {
+        return 1;
+    }
+    $result = 1;
+    for ($i = 1; $i <= $num; $i++) {
+        $result *= $i;
+    }
+    return $result;
+}
+
 // Function to handle multiple calculations
 function runCalculator() {
-    //Prompt the user
+    // Prompt the user
     while (true) {
         $num1 = getNumberInput("Enter the first number: ");
 
         $operator = getOperatorInput();
         
-        // Check if user wants to exit
+        // Check if the user wants to exit
         if (strtolower($operator) == "exit") {
             echo "Goodbye!\n";
             break;
         }
         
-        // Check for single operand operations
-        if ($operator == "sqrt" || $operator == "abs" || $operator == "log") {
+        // Handle single operand operations
+        if (in_array($operator, ["sqrt", "abs", "log", "sin", "cos", "tan", "fact"])) {
             $result = calculate($num1, null, $operator);
         } else {
-            // Get second number for binary operations
+            // Get the second number for binary operations
             $num2 = getNumberInput("Enter the second number: ");
             $result = calculate($num1, $num2, $operator);
         }
@@ -79,7 +99,7 @@ function runCalculator() {
         echo "🎯 RESULT: $result\n";
         echo "==================================================\n";
 
-        // Prompt the user wants another calculation
+        // Ask if the user wants another calculation
         echo "\nDo you want to perform another calculation? (y/n): ";
         $continue = trim(fgets(STDIN));
         if (strtolower($continue) !== "y") {
