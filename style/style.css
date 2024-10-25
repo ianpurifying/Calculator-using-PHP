@@ -14,7 +14,7 @@ body {
 }
 
 .calculator {
-  width: 300px;
+  width: 400px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -39,7 +39,7 @@ body {
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 15px;
 }
 
 button {
@@ -47,7 +47,7 @@ button {
   padding: 20px;
   font-size: 18px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #e0e0e0;
   cursor: pointer;
   transition: background-color 0.3s ease;
