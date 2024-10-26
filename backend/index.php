@@ -3,6 +3,7 @@
 /*
     APP: CALCULATOR USING PHP
     CREATED BY: IAN PURIFICACION
+    PURPOSE: NONE, PHP practice hehe
 */
 
 // Function to get the user's input for valid number

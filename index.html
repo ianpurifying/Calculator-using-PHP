@@ -4,39 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
+    <script src="backend/index.js" defer></script>
     <title>Calculator</title>
   </head>
   <body>
     <div class="calculator">
       <div class="display">
-        <input type="text" id="display" />
+        <input type="text" id="display" readonly />
       </div>
-
       <div class="buttons">
-        <button>√</button>
-        <button>log</button>
-        <button>sin</button>
-        <button>cos</button>
-        <button>tan</button>
-        <button>fact</button>
-        <button>**</button>
-        <button>%</button>
-        <button>7</button>
-        <button>8</button>
-        <button>9</button>
-        <button>/</button>
-        <button>4</button>
-        <button>5</button>
-        <button>6</button>
-        <button>*</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>-</button>
-        <button>0</button>
-        <button>.</button>
-        <button>=</button>
-        <button>+</button>
+        <button onclick="updateDisplay('√')">√</button>
+        <button onclick="updateDisplay('log')">log</button>
+        <button onclick="updateDisplay('fact')">fact</button>
+        <button onclick="backspace()">←</button>
+        <button onclick="updateDisplay('sin')">sin</button>
+        <button onclick="updateDisplay('cos')">cos</button>
+        <button onclick="updateDisplay('tan')">tan</button>
+        <button onclick="updateDisplay('**')">**</button>
+        <button onclick="updateDisplay('%')">%</button>
+        <button onclick="updateDisplay('7')">7</button>
+        <button onclick="updateDisplay('8')">8</button>
+        <button onclick="updateDisplay('9')">9</button>
+        <button onclick="updateDisplay('/')">/</button>
+        <button onclick="updateDisplay('4')">4</button>
+        <button onclick="updateDisplay('5')">5</button>
+        <button onclick="updateDisplay('6')">6</button>
+        <button onclick="updateDisplay('*')">*</button>
+        <button onclick="updateDisplay('1')">1</button>
+        <button onclick="updateDisplay('2')">2</button>
+        <button onclick="updateDisplay('3')">3</button>
+        <button onclick="updateDisplay('-')">-</button>
+        <button onclick="updateDisplay('0')">0</button>
+        <button onclick="updateDisplay('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="updateDisplay('+')">+</button>
       </div>
     </div>
   </body>
