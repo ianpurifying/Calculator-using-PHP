@@ -14,7 +14,7 @@ body {
 }
 
 .calculator {
-  width: 400px;
+  width: 320px;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -39,15 +39,14 @@ body {
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 10px;
 }
 
 button {
-  width: 100%;
   padding: 20px;
   font-size: 18px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #e0e0e0;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -55,4 +54,17 @@ button {
 
 button:hover {
   background-color: #d4d4d4;
+}
+
+button.zero {
+  grid-column: span 2; /* Make "0" button double width */
+}
+
+.buttons button:nth-child(4n) {
+  background-color: #ffae42;
+  color: #fff;
+}
+
+.buttons button:nth-child(4n):hover {
+  background-color: #ff9d0a;
 }

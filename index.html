@@ -10,34 +10,35 @@
   <body>
     <div class="calculator">
       <div class="display">
-        <input type="text" id="display" readonly />
+        <input type="text" id="display" oninput="validateInput()" />
       </div>
       <div class="buttons">
         <button onclick="updateDisplay('√')">√</button>
         <button onclick="updateDisplay('log')">log</button>
         <button onclick="updateDisplay('fact')">fact</button>
-        <button onclick="backspace()">←</button>
+        <button onclick="updateDisplay('.')">.</button>
         <button onclick="updateDisplay('sin')">sin</button>
         <button onclick="updateDisplay('cos')">cos</button>
         <button onclick="updateDisplay('tan')">tan</button>
-        <button onclick="updateDisplay('**')">**</button>
+        <button onclick="updateDisplay('**')">^</button>
         <button onclick="updateDisplay('%')">%</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="backspace()">←</button>
+        <button onclick="updateDisplay('/')">/</button>
         <button onclick="updateDisplay('7')">7</button>
         <button onclick="updateDisplay('8')">8</button>
         <button onclick="updateDisplay('9')">9</button>
-        <button onclick="updateDisplay('/')">/</button>
+        <button onclick="updateDisplay('*')">*</button>
         <button onclick="updateDisplay('4')">4</button>
         <button onclick="updateDisplay('5')">5</button>
         <button onclick="updateDisplay('6')">6</button>
-        <button onclick="updateDisplay('*')">*</button>
+        <button onclick="updateDisplay('-')">-</button>
         <button onclick="updateDisplay('1')">1</button>
         <button onclick="updateDisplay('2')">2</button>
         <button onclick="updateDisplay('3')">3</button>
-        <button onclick="updateDisplay('-')">-</button>
-        <button onclick="updateDisplay('0')">0</button>
-        <button onclick="updateDisplay('.')">.</button>
-        <button onclick="calculate()">=</button>
         <button onclick="updateDisplay('+')">+</button>
+        <button onclick="updateDisplay('0')" class="zero">0</button>
+        <button onclick="calculate()">=</button>
       </div>
     </div>
   </body>
